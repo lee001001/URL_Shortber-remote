@@ -7,8 +7,7 @@ const urlSchema = new Schema({
     required: true // 這是個必填欄位
   },
   shortURL: {
-    type: String,
-    required: true
+    type: String
   }
 })
 module.exports = mongoose.model('Url', urlSchema)
