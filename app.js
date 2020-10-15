@@ -1,5 +1,8 @@
 const express = require('express')
+const methodOverride = require('method-override')
 const app = express()
+
+app.use(methodOverride('_method'))
 
 app.get('/', (req, res) => {
   res.send('Hello world')
