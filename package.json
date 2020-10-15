@@ -1,0 +1,17 @@
+{
+  "name": "short-url-generate",
+  "version": "1.0.0",
+  "description": "## 功能 * 使用者可以在表單輸入原始網址，畫面會回傳格式化後的短網址 * 在伺服器啟動期間，輸入提供的短網址，可以導向原本的網站",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
