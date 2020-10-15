@@ -25,11 +25,13 @@ router.post('/', (req, res) => {
       if (checked) {
         const index = urls.findIndex(url => url.origin === origin)
         console.log(index)
+        console.log(urls[index].shortURL)
+        shortURL = urls[index].shortURL
       } else {
         shortURL = `${origin}/${generateShortUrl()}`
         Url.create({ origin, shortURL })
-        res.render('generated', { origin, shortURL })
       }
+      res.render('generated', { origin, shortURL })
     })
     .catch(error => console.log(error))
 })
