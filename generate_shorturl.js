@@ -17,14 +17,12 @@ function generateShortUrl () {
   allCharacters.forEach((characters) => {
     collection = collection.concat(characters.split(''))
   })
-  console.log('collection', collection)
 
   // start generating shortUrl
   let shortUrl = ''
   for (let i = 0; i < 5; i++) {
     shortUrl += picked(collection)
   }
-  console.log(shortUrl)
 
   // return the short-Url
   console.log('This function will generate shorted url')
@@ -32,3 +30,5 @@ function generateShortUrl () {
 }
 
 generateShortUrl()
+
+module.exports = generateShortUrl
