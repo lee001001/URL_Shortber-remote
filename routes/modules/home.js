@@ -7,6 +7,8 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
   console.log('get informatiom')
+  console.log('req.body', req.body)
+  res.render('generated')
 })
 
 module.exports = router

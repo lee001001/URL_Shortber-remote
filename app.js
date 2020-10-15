@@ -1,14 +1,18 @@
 const express = require('express')
-const methodOverride = require('method-override')
-const routes = require('./routes')
 const app = express()
+const methodOverride = require('method-override')
+const bodyParser = require('body-parser')
+const routes = require('./routes')
+
 const exphbs = require('express-handlebars')
 
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
+app.use(bodyParser.urlencoded({ extended: true }))
+
+app.use(methodOverride('_method'))
 
 app.use(routes)
-app.use(methodOverride('_method'))
 
 // 設定PORT 3000
 app.listen(3000, () => {
