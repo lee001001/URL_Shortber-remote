@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const Url = require('../../models/url')
 const generateShortUrl = require('../../generate_shorturl')
+const herokuURL = 'https://sleepy-brushlands-96691.herokuapp.com/'
 
 router.post('/', (req, res) => {
   const origin = req.body.origin
@@ -28,7 +29,8 @@ router.post('/', (req, res) => {
         console.log(urls[index].shortURL)
         shortURL = urls[index].shortURL
       } else {
-        shortURL = `${origin}/${generateShortUrl()}`
+        // Heroku URL : https://sleepy-brushlands-96691.herokuapp.com/
+        shortURL = `${herokuURL}/${generateShortUrl()}`
         Url.create({ origin, shortURL })
       }
       res.render('generated', { origin, shortURL })
